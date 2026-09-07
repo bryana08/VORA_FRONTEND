@@ -60,7 +60,7 @@ class _ProfileChoiceScreenState extends State<ProfileChoiceScreen> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    // TODO: naviguer vers HomeScreen (passager) ou DriverHomeScreen (chauffeur)
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const HomeScreen()));
                     // selon la valeur de `selected`
                   },
                   style: ElevatedButton.styleFrom(
