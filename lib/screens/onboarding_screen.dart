@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../core/constants.dart';
 import '../widgets/vora_logo.dart';
+import 'signup_screen.dart
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -96,7 +97,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    // TODO: naviguer vers l'écran suivant (Signup)
+                    Navigator.push(context, MaterialPageRoute(builder: (_) => const SignupScreen()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.green,
