@@ -34,4 +34,15 @@ class ApiClient {
     );
     return response.statusCode == 200;
   }
+static Future<bool> triggerSOS(String rideId) async {
+  try {
+    final response = await http.post(
+      Uri.parse('$baseUrl/rides/$rideId/sos'),
+      headers: {'Content-Type': 'application/json'},
+    );
+    return response.statusCode == 200;
+  } catch (e) {
+    return false;
+  }
+}
 }
