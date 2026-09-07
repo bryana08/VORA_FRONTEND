@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../core/constants.dart';
 import '../widgets/vora_logo.dart';
-
+import 'profile_choice_screen.dart';
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
 
@@ -119,7 +119,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      // TODO: appeler auth_service.dart -> /auth/passenger/register
+                      Navigator.push(context, MaterialPageRoute(builder: (_) => const ProfileChoiceScreen()));
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.green,
