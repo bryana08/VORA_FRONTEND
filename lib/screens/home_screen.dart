@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../core/constants.dart';
 import '../widgets/vora_logo.dart';
+import 'price_negotiation_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -11,6 +12,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int navIndex = 0;
+
+  void _goToNegotiation() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (_) => const PriceNegotiationScreen()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,14 +86,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Stack(
                   children: [
                     const Center(child: Icon(Icons.map_outlined, size: 64, color: Color(0xFFC7CCC8))),
-                    Positioned(
-                      top: 20, left: 24,
-                      child: _MapPin(label: 'Carrefour EMIA'),
-                    ),
-                    Positioned(
-                      bottom: 40, right: 30,
-                      child: _MapPin(label: 'Marché Mokolo'),
-                    ),
+                    Positioned(top: 20, left: 24, child: _MapPin(label: 'Carrefour EMIA')),
+                    Positioned(bottom: 40, right: 30, child: _MapPin(label: 'Marché Mokolo')),
                   ],
                 ),
               ),
@@ -123,6 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           icon: Icons.local_taxi_outlined,
                           title: 'Taxi Covoiturage',
                           subtitle: 'Partagez le trajet et économisez',
+                          onTap: _goToNegotiation,
                         ),
                       ),
                       const SizedBox(width: AppSpacing.sm),
@@ -131,6 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           icon: Icons.directions_car_outlined,
                           title: 'Course Privée',
                           subtitle: 'Trajet direct, rien que pour vous',
+                          onTap: _goToNegotiation,
                         ),
                       ),
                     ],
@@ -189,32 +193,42 @@ class _RideTypeCard extends StatelessWidget {
   final IconData icon;
   final String title;
   final String subtitle;
+  final VoidCallback onTap;
 
-  const _RideTypeCard({required this.icon, required this.title, required this.subtitle});
+  const _RideTypeCard({
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(AppSpacing.sm),
-      decoration: BoxDecoration(
-        border: Border.all(color: AppColors.border),
-        borderRadius: BorderRadius.circular(AppRadius.md),
-      ),
-      child: Row(
-        children: [
-          Icon(icon, color: AppColors.navy, size: 28),
-          const SizedBox(width: 6),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(title, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AppColors.navy)),
-                Text(subtitle, style: const TextStyle(fontSize: 10, color: AppColors.muted)),
-              ],
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(AppRadius.md),
+      child: Container(
+        padding: const EdgeInsets.all(AppSpacing.sm),
+        decoration: BoxDecoration(
+          border: Border.all(color: AppColors.border),
+          borderRadius: BorderRadius.circular(AppRadius.md),
+        ),
+        child: Row(
+          children: [
+            Icon(icon, color: AppColors.navy, size: 28),
+            const SizedBox(width: 6),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(title, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AppColors.navy)),
+                  Text(subtitle, style: const TextStyle(fontSize: 10, color: AppColors.muted)),
+                ],
+              ),
             ),
-          ),
-          const Icon(Icons.chevron_right, color: AppColors.muted, size: 18),
-        ],
+            const Icon(Icons.chevron_right, color: AppColors.muted, size: 18),
+          ],
+        ),
       ),
     );
   }
