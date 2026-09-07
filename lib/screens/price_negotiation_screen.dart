@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../core/constants.dart';
 import '../widgets/vora_logo.dart';
-
+import 'ride_in_progress_screen.dart';
 class PriceNegotiationScreen extends StatefulWidget {
   const PriceNegotiationScreen({super.key});
 
@@ -154,7 +154,7 @@ class _PriceNegotiationScreenState extends State<PriceNegotiationScreen> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        // TODO: appeler ride_service.dart -> POST /rides (avec myPrice)
+                        Navigator.push(context, MaterialPageRoute(builder: (_) => const PaymentMethodScreen()));
                         // puis naviguer vers PaymentMethodScreen
                       },
                       style: ElevatedButton.styleFrom(
