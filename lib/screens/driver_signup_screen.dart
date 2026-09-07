@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../core/constants.dart';
 import '../widgets/vora_logo.dart';
-
+import 'driver_pending_verification_screen.dart';
 class DriverSignupScreen extends StatefulWidget {
   const DriverSignupScreen({super.key});
 
@@ -208,7 +208,7 @@ class _DriverSignupScreenState extends State<DriverSignupScreen> {
                 child: ElevatedButton.icon(
                   onPressed: (cniImported && licenseImported && registrationImported)
                       ? () {
-                          // TODO: appeler auth_service.dart -> /auth/driver/register (multipart avec les docs)
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => const DriverPendingVerificationScreen()));
                         }
                       : null,
                   icon: const Icon(Icons.send, color: Colors.white, size: 18),
