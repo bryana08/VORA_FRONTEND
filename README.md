@@ -95,7 +95,19 @@ cd VORA_FRONTEND
 flutter pub get
 flutter run
 
+## Outils utilisés
+
+### Frontend (ce dépôt)
+- **Flutter / Dart** — framework de développement mobile
+- **VS Code** — éditeur de code
+- **Git / GitHub** — gestion de version et collaboration
+
+### Backend
+- **FastAPI + SQLModel** — API et modèles de données
+- Voir [VORA_BACKEND](https://github.com/Asanflo/VORA_BACKEND) pour le détail
+
 Équipe
-Projet réalisé dans le cadre du Hackathon NuxCine 2026.
+Projet réalisé dans le cadre du Hackathon NuxCine 2026
 Frontend mobile (Flutter) : @bryana08
 Backend (FastAPI) : @Asanflo
+
