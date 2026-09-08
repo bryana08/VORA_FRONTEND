@@ -80,7 +80,10 @@ cd VORA_FRONTEND
 flutter pub get
 flutter run
 
- Équipe
+
+
+
+### Équipe
 
 Projet réalisé dans le cadre du Hackathon NuxCine 2026.
 Frontend mobile (Flutter) : @bryana08
