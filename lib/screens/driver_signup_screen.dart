@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import '../core/constants.dart';
 import '../widgets/vora_logo.dart';
 import 'driver_pending_verification_screen.dart';
+
 class DriverSignupScreen extends StatefulWidget {
   const DriverSignupScreen({super.key});
-
   @override
   State<DriverSignupScreen> createState() => _DriverSignupScreenState();
 }
@@ -12,7 +12,6 @@ class DriverSignupScreen extends StatefulWidget {
 class _DriverSignupScreenState extends State<DriverSignupScreen> {
   final nameController = TextEditingController();
   final phoneController = TextEditingController();
-
   bool cniImported = false;
   bool licenseImported = false;
   bool registrationImported = false;
@@ -41,11 +40,7 @@ class _DriverSignupScreenState extends State<DriverSignupScreen> {
               const SizedBox(height: AppSpacing.sm),
               Row(
                 children: [
-                  IconButton(
-                    padding: EdgeInsets.zero,
-                    onPressed: () => Navigator.maybePop(context),
-                    icon: const Icon(Icons.arrow_back, color: Colors.white),
-                  ),
+                  IconButton(padding: EdgeInsets.zero, onPressed: () => Navigator.maybePop(context), icon: const Icon(Icons.arrow_back, color: Colors.white)),
                   const Spacer(),
                   const VoraLogo(size: 30),
                   const Spacer(),
@@ -61,12 +56,9 @@ class _DriverSignupScreenState extends State<DriverSignupScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(width: 8),
-                  const Icon(Icons.notifications_none, color: Colors.white),
                 ],
               ),
               const SizedBox(height: AppSpacing.lg),
-
               const Text.rich(
                 TextSpan(
                   text: 'Inscription Chauffeur ',
@@ -75,11 +67,8 @@ class _DriverSignupScreenState extends State<DriverSignupScreen> {
                 ),
               ),
               const SizedBox(height: 4),
-              const Text('Rejoignez notre communauté de chauffeurs et conduisez en toute sérénité.',
-                  style: TextStyle(fontSize: 13, color: Colors.white60)),
+              const Text('Rejoignez notre communauté de chauffeurs et conduisez en toute sérénité.', style: TextStyle(fontSize: 13, color: Colors.white60)),
               const SizedBox(height: AppSpacing.lg),
-
-              // Étapes
               Row(
                 children: [
                   _StepCircle(number: '1', active: true),
@@ -98,8 +87,6 @@ class _DriverSignupScreenState extends State<DriverSignupScreen> {
                 ],
               ),
               const SizedBox(height: AppSpacing.lg),
-
-              // Informations personnelles
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(AppSpacing.md),
@@ -109,81 +96,34 @@ class _DriverSignupScreenState extends State<DriverSignupScreen> {
                   children: [
                     Row(
                       children: [
-                        Container(
-                          width: 30, height: 30,
-                          decoration: const BoxDecoration(color: AppColors.green, shape: BoxShape.circle),
-                          child: const Icon(Icons.person, color: Colors.white, size: 16),
-                        ),
+                        Container(width: 30, height: 30, decoration: const BoxDecoration(color: AppColors.green, shape: BoxShape.circle), child: const Icon(Icons.person, color: Colors.white, size: 16)),
                         const SizedBox(width: AppSpacing.sm),
                         const Text('Informations personnelles', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
                       ],
                     ),
                     const SizedBox(height: AppSpacing.md),
-                    _DarkField(
-                      icon: Icons.person_outline,
-                      label: 'Nom complet (comme sur CNI)',
-                      hint: 'Ex : M. Njoya Jean Paul',
-                      controller: nameController,
-                      fieldBg: fieldBg,
-                    ),
+                    _DarkField(icon: Icons.person_outline, label: 'Nom complet (comme sur CNI)', hint: 'Ex : M. Njoya Jean Paul', controller: nameController, fieldBg: fieldBg),
                     const SizedBox(height: AppSpacing.sm),
-                    _DarkField(
-                      icon: Icons.phone_outlined,
-                      label: 'Numéro Mobile Money (+237)',
-                      hint: 'Ex : 6XX XXX XXX',
-                      controller: phoneController,
-                      fieldBg: fieldBg,
-                      keyboardType: TextInputType.phone,
-                    ),
+                    _DarkField(icon: Icons.phone_outlined, label: 'Numéro Mobile Money (+237)', hint: 'Ex : 6XX XXX XXX', controller: phoneController, fieldBg: fieldBg, keyboardType: TextInputType.phone),
                   ],
                 ),
               ),
               const SizedBox(height: AppSpacing.lg),
-
-              // Documents
               Row(
                 children: [
-                  Container(
-                    width: 26, height: 26,
-                    decoration: const BoxDecoration(color: AppColors.green, shape: BoxShape.circle),
-                    child: const Center(child: Text('2', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12))),
-                  ),
+                  Container(width: 26, height: 26, decoration: const BoxDecoration(color: AppColors.green, shape: BoxShape.circle), child: const Center(child: Text('2', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12)))),
                   const SizedBox(width: AppSpacing.sm),
                   const Text('Documents à fournir', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
                 ],
               ),
-              const SizedBox(height: 2),
-              const Padding(
-                padding: EdgeInsets.only(left: 34),
-                child: Text('Veuillez importer les documents ci-dessous.', style: TextStyle(color: Colors.white54, fontSize: 12)),
-              ),
+              const Padding(padding: EdgeInsets.only(left: 34), child: Text('Veuillez importer les documents ci-dessous.', style: TextStyle(color: Colors.white54, fontSize: 12))),
               const SizedBox(height: AppSpacing.md),
-
-              _DocumentTile(
-                label: 'Photo CNI (Recto/Verso)',
-                sublabel: "Carte nationale d'identité",
-                imported: cniImported,
-                cardBg: cardBg,
-                onImport: () => setState(() => cniImported = true),
-              ),
+              _DocumentTile(label: 'Photo CNI (Recto/Verso)', sublabel: "Carte nationale d'identité", imported: cniImported, cardBg: cardBg, onImport: () => setState(() => cniImported = true)),
               const SizedBox(height: AppSpacing.sm),
-              _DocumentTile(
-                label: 'Permis de conduire',
-                sublabel: 'En cours de validité',
-                imported: licenseImported,
-                cardBg: cardBg,
-                onImport: () => setState(() => licenseImported = true),
-              ),
+              _DocumentTile(label: 'Permis de conduire', sublabel: 'En cours de validité', imported: licenseImported, cardBg: cardBg, onImport: () => setState(() => licenseImported = true)),
               const SizedBox(height: AppSpacing.sm),
-              _DocumentTile(
-                label: 'Immatriculation du Véhicule',
-                sublabel: "Carte grise ou certificat d'immatriculation",
-                imported: registrationImported,
-                cardBg: cardBg,
-                onImport: () => setState(() => registrationImported = true),
-              ),
+              _DocumentTile(label: 'Immatriculation du Véhicule', sublabel: "Carte grise ou certificat", imported: registrationImported, cardBg: cardBg, onImport: () => setState(() => registrationImported = true)),
               const SizedBox(height: AppSpacing.md),
-
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(AppSpacing.md),
@@ -192,17 +132,11 @@ class _DriverSignupScreenState extends State<DriverSignupScreen> {
                   children: const [
                     Icon(Icons.shield_outlined, color: AppColors.green, size: 18),
                     SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        'Vos documents sont vérifiés manuellement par nos équipes pour garantir la sécurité des passagers.',
-                        style: TextStyle(fontSize: 11.5, color: Colors.white60, height: 1.4),
-                      ),
-                    ),
+                    Expanded(child: Text('Vos documents sont vérifiés manuellement par nos équipes pour garantir la sécurité des passagers.', style: TextStyle(fontSize: 11.5, color: Colors.white60, height: 1.4))),
                   ],
                 ),
               ),
               const SizedBox(height: AppSpacing.lg),
-
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton.icon(
@@ -213,34 +147,12 @@ class _DriverSignupScreenState extends State<DriverSignupScreen> {
                       : null,
                   icon: const Icon(Icons.send, color: Colors.white, size: 18),
                   label: const Text('Soumettre pour Vérification', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.green,
-                    disabledBackgroundColor: AppColors.green.withOpacity(0.35),
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppRadius.pill)),
-                  ),
+                  style: ElevatedButton.styleFrom(backgroundColor: AppColors.green, disabledBackgroundColor: AppColors.green.withOpacity(0.35), padding: const EdgeInsets.symmetric(vertical: 16), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppRadius.pill))),
                 ),
               ),
               const SizedBox(height: AppSpacing.lg),
             ],
           ),
-        ),
-      ),
-      bottomNavigationBar: Container(
-        decoration: const BoxDecoration(color: Color(0xFF0B1410), border: Border(top: BorderSide(color: Colors.white12))),
-        child: BottomNavigationBar(
-          backgroundColor: const Color(0xFF0B1410),
-          currentIndex: 2,
-          selectedItemColor: AppColors.green,
-          unselectedItemColor: Colors.white38,
-          type: BottomNavigationBarType.fixed,
-          onTap: (_) {},
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'Accueil'),
-            BottomNavigationBarItem(icon: Icon(Icons.directions_car_outlined), label: 'Mes courses'),
-            BottomNavigationBarItem(icon: Icon(Icons.person_add_outlined), label: 'Inscription'),
-            BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'Profil'),
-          ],
         ),
       ),
     );
@@ -251,14 +163,9 @@ class _StepCircle extends StatelessWidget {
   final String number;
   final bool active;
   const _StepCircle({required this.number, required this.active});
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 30, height: 30,
-      decoration: BoxDecoration(color: active ? AppColors.green : Colors.white12, shape: BoxShape.circle),
-      child: Center(child: Text(number, style: TextStyle(color: active ? Colors.white : Colors.white38, fontWeight: FontWeight.bold))),
-    );
+    return Container(width: 30, height: 30, decoration: BoxDecoration(color: active ? AppColors.green : Colors.white12, shape: BoxShape.circle), child: Center(child: Text(number, style: TextStyle(color: active ? Colors.white : Colors.white38, fontWeight: FontWeight.bold))));
   }
 }
 
@@ -269,16 +176,7 @@ class _DarkField extends StatelessWidget {
   final TextEditingController controller;
   final Color fieldBg;
   final TextInputType? keyboardType;
-
-  const _DarkField({
-    required this.icon,
-    required this.label,
-    required this.hint,
-    required this.controller,
-    required this.fieldBg,
-    this.keyboardType,
-  });
-
+  const _DarkField({required this.icon, required this.label, required this.hint, required this.controller, required this.fieldBg, this.keyboardType});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -293,14 +191,7 @@ class _DarkField extends StatelessWidget {
               controller: controller,
               keyboardType: keyboardType,
               style: const TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                labelText: label,
-                labelStyle: const TextStyle(color: Colors.white, fontSize: 12),
-                hintText: hint,
-                hintStyle: const TextStyle(color: Colors.white30, fontSize: 12),
-                floatingLabelBehavior: FloatingLabelBehavior.always,
-              ),
+              decoration: InputDecoration(border: InputBorder.none, labelText: label, labelStyle: const TextStyle(color: Colors.white, fontSize: 12), hintText: hint, hintStyle: const TextStyle(color: Colors.white30, fontSize: 12), floatingLabelBehavior: FloatingLabelBehavior.always),
             ),
           ),
         ],
@@ -315,15 +206,7 @@ class _DocumentTile extends StatelessWidget {
   final bool imported;
   final Color cardBg;
   final VoidCallback onImport;
-
-  const _DocumentTile({
-    required this.label,
-    required this.sublabel,
-    required this.imported,
-    required this.cardBg,
-    required this.onImport,
-  });
-
+  const _DocumentTile({required this.label, required this.sublabel, required this.imported, required this.cardBg, required this.onImport});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -331,30 +214,14 @@ class _DocumentTile extends StatelessWidget {
       decoration: BoxDecoration(color: cardBg, borderRadius: BorderRadius.circular(AppRadius.md)),
       child: Row(
         children: [
-          Container(
-            width: 34, height: 34,
-            decoration: const BoxDecoration(color: AppColors.green, shape: BoxShape.circle),
-            child: const Icon(Icons.camera_alt_outlined, color: Colors.white, size: 16),
-          ),
+          Container(width: 34, height: 34, decoration: const BoxDecoration(color: AppColors.green, shape: BoxShape.circle), child: const Icon(Icons.camera_alt_outlined, color: Colors.white, size: 16)),
           const SizedBox(width: AppSpacing.sm),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(label, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 13)),
-                Text(sublabel, style: const TextStyle(color: Colors.white54, fontSize: 10.5)),
-              ],
-            ),
-          ),
+          Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text(label, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 13)), Text(sublabel, style: const TextStyle(color: Colors.white54, fontSize: 10.5))])),
           OutlinedButton.icon(
             onPressed: onImport,
             icon: Icon(imported ? Icons.check : Icons.camera_alt_outlined, color: AppColors.green, size: 14),
             label: Text(imported ? 'Importé' : 'Importer', style: const TextStyle(color: AppColors.green, fontSize: 11)),
-            style: OutlinedButton.styleFrom(
-              side: const BorderSide(color: AppColors.green),
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppRadius.pill)),
-            ),
+            style: OutlinedButton.styleFrom(side: const BorderSide(color: AppColors.green), padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppRadius.pill))),
           ),
         ],
       ),
