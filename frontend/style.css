@@ -1,0 +1,572 @@
+/* =====================================================
+   VORA — DESIGN SYSTEM
+   Mobilité intelligente & sécurisée au Cameroun
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --vora-green: #10B981;
+    --vora-dark-green: #059669;
+    --vora-light: #ECFDF5;
+    --dark: #111827;
+    --gray: #6B7280;
+    --light-gray: #F3F4F6;
+    --border: #E5E7EB;
+    --white: #FFFFFF;
+    --danger: #EF4444;
+    --yellow: #FBBF24;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #F5F7F6;
+    color: var(--dark);
+    min-height: 100vh;
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+header {
+    height: 72px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--vora-green);
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: var(--vora-green);
+}
+
+.login {
+    background: var(--dark);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 11px 20px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+    min-height: 650px;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+
+    padding: 70px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ECFDF5 0%,
+            #FFFFFF 55%,
+            #F0FDF4 100%
+        );
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.badge {
+    display: inline-block;
+
+    background: var(--vora-light);
+    color: var(--vora-dark-green);
+
+    padding: 9px 15px;
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 6vw, 72px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--vora-green);
+}
+
+.hero-text p {
+    color: var(--gray);
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 560px;
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.primary,
+.secondary {
+    border: none;
+    border-radius: 13px;
+    padding: 15px 20px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.primary {
+    background: var(--vora-green);
+    color: white;
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.25);
+}
+
+.primary:hover {
+    background: var(--vora-dark-green);
+    transform: translateY(-2px);
+}
+
+.secondary {
+    background: white;
+    color: var(--dark);
+    border: 1px solid var(--border);
+}
+
+.secondary:hover {
+    border-color: var(--vora-green);
+}
+
+.full {
+    width: 100%;
+}
+
+/* =====================================================
+   BOOKING CARD
+   ===================================================== */
+
+.booking-card {
+    background: white;
+    padding: 28px;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.10);
+
+    border: 1px solid #E8ECEA;
+}
+
+.booking-card h2 {
+    font-size: 23px;
+    margin-bottom: 25px;
+}
+
+.booking-card label {
+    display: block;
+    color: var(--gray);
+    font-size: 13px;
+    font-weight: 700;
+    margin: 15px 0 7px;
+}
+
+.booking-card input {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    outline: none;
+    font-size: 14px;
+
+    background: #FAFAFA;
+}
+
+.booking-card input:focus {
+    border-color: var(--vora-green);
+    background: white;
+}
+
+/* =====================================================
+   WEATHER ALERT
+   ===================================================== */
+
+.alert {
+    margin: 18px 0;
+
+    padding: 14px;
+
+    background: #FFF7ED;
+    border: 1px solid #FED7AA;
+
+    border-radius: 14px;
+
+    color: #92400E;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* =====================================================
+   RESULTAT ESTIMATION
+   ===================================================== */
+
+#result {
+    margin-top: 15px;
+}
+
+.result-card {
+    background: var(--vora-light);
+    border-radius: 15px;
+    padding: 16px;
+    border: 1px solid #A7F3D0;
+}
+
+.result-card strong {
+    color: var(--vora-dark-green);
+    font-size: 20px;
+}
+
+/* =====================================================
+   FEATURES
+   ===================================================== */
+
+.features {
+    padding: 70px 8%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    background: white;
+}
+
+.feature {
+    padding: 25px;
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    transition: 0.2s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    border-color: var(--vora-green);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--vora-light);
+    border-radius: 14px;
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    margin-bottom: 8px;
+}
+
+.feature p {
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    padding: 30px;
+    text-align: center;
+
+    background: var(--dark);
+    color: #D1D5DB;
+
+    font-size: 13px;
+}
+
+footer strong {
+    color: var(--vora-green);
+}
+
+/* =====================================================
+   RESPONSIVE TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 50px 6%;
+    }
+
+    .hero-text {
+        text-align: center;
+        margin: auto;
+    }
+
+    .hero-text p {
+        margin: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .booking-card {
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .features {
+        grid-template-columns: 1fr 1fr;
+        padding: 50px 6%;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    header {
+        height: 64px;
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .login {
+        padding: 9px 13px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 35px 18px 45px;
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        letter-spacing: -1px;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .primary,
+    .secondary {
+        width: 100%;
+    }
+
+    .booking-card {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        padding: 40px 18px;
+    }
+
+    .feature {
+        padding: 20px;
+    }
+
+    footer {
+        font-size: 11px;
+    }
+/* =====================================================
+   AUTHENTIFICATION VORA
+   ===================================================== */
+
+.auth-container {
+    min-height: calc(100vh - 72px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ECFDF5,
+            #FFFFFF,
+            #F0FDF4
+        );
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.10);
+}
+
+.auth-logo {
+    width: 60px;
+    height: 60px;
+
+    display: grid;
+    place-items: center;
+
+    margin: 0 auto 20px;
+
+    border-radius: 18px;
+
+    background: var(--vora-green);
+    color: white;
+
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.auth-card h1 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.auth-subtitle {
+    text-align: center;
+
+    color: var(--gray);
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+.auth-tabs {
+    display: flex;
+
+    background: var(--light-gray);
+
+    padding: 5px;
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+}
+
+.auth-tab {
+    flex: 1;
+
+    border: none;
+    background: transparent;
+
+    padding: 12px;
+
+    border-radius: 9px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    color: var(--gray);
+}
+
+.auth-tab.active {
+    background: white;
+    color: var(--vora-green);
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.security-text {
+    text-align: center;
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+    margin-top: 18px;
+}
+
+.auth-card input {
+    margin-bottom: 8px;
+}
+}

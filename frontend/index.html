@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VORA - Mobilité intelligente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">VORA</div>
+    <nav>
+        <a href="#">Accueil</a>
+        <a href="#">Mes courses</a>
+        <a href="#">Sécurité</a>
+        <a href="#">Profil</a>
+    </nav>
+    <a href="auth.html"class="login">connexion</a>
+</header>
+
+<section class="hero">
+
+    <div class="hero-text">
+        <span class="badge">🇨🇲 Mobilité intelligente au Cameroun</span>
+
+        <h1>
+            Déplacez-vous<br>
+            <span>plus simplement.</span>
+        </h1>
+
+        <p>
+            Réservez un taxi, négociez votre tarif et voyagez
+            en toute sécurité avec VORA.
+        </p>
+
+        <div class="buttons">
+            <button class="primary" onclick="commander()">
+                🚕 Commander une course
+            </button>
+
+            <button class="secondary" onclick="covoiturage()">
+                👥 Covoiturage
+            </button>
+        </div>
+    </div>
+
+    <div class="booking-card">
+
+        <h2>Où allez-vous ?</h2>
+
+        <label>📍 Départ</label>
+        <input id="depart" placeholder="Ex : Bastos">
+
+        <label>📍 Destination</label>
+        <input id="destination"
+               placeholder="Ex : Carrefour EMIA">
+
+        <div class="alert">
+            🌧️ <b>Pluie battante</b><br>
+            Circulation ralentie dans certaines zones de Yaoundé.
+        </div>
+
+        <button class="primary full" onclick="estimer()">
+            Estimer le trajet
+        </button>
+
+        <div id="result"></div>
+
+    </div>
+
+</section>
+
+<section class="features">
+
+    <div class="feature">
+        <div class="icon">🛡️</div>
+        <h3>Voyage sécurisé</h3>
+        <p>Chauffeurs vérifiés et suivi de votre trajet.</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">💰</div>
+        <h3>Tarif négociable</h3>
+        <p>Choisissez un prix adapté à votre trajet.</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">📍</div>
+        <h3>Suivi en temps réel</h3>
+        <p>Suivez votre chauffeur pendant toute la course.</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">🤖</div>
+        <h3>IA VORA</h3>
+        <p>Des itinéraires intelligents adaptés au trafic.</p>
+    </div>
+
+</section>
+
+<footer>
+    <strong>VORA</strong> — Le transport intelligent & sécurisé 🇨🇲
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
