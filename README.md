@@ -1,10 +1,18 @@
+<<<<<<< HEAD
+=======
+# VORA_FRONTEND
+>>>>>>> d1d1fa173da45b58736829c09153e1516bd8f6ac
 # VORA — Application Mobile Passager & Chauffeur
 
 **Hackathon NuxCine 2026**
 
 VORA est une application de mobilité intelligente pensée pour les réalités du transport urbain au Cameroun. Elle permet aux passagers de réserver des courses (privées ou en covoiturage), de négocier leur tarif en toute transparence, et de payer via un système de **paiement séquestre Mobile Money** qui protège à la fois le passager et le chauffeur.
 
+<<<<<<< HEAD
 ##  Fonctionnalités principales
+=======
+## ✨ Fonctionnalités principales
+>>>>>>> d1d1fa173da45b58736829c09153e1516bd8f6ac
 
 ### Côté Passager
 - Onboarding et création de compte
@@ -27,17 +35,25 @@ VORA est une application de mobilité intelligente pensée pour les réalités d
 - Validation de l'arrivée via saisie du code ticket du passager
 - Suivi des gains du jour et du portefeuille
 
+<<<<<<< HEAD
 ##  Stack technique
+=======
+## 🛠️ Stack technique
+>>>>>>> d1d1fa173da45b58736829c09153e1516bd8f6ac
 
 - **Framework** : Flutter
 - **Backend** : [VORA_BACKEND](https://github.com/Asanflo/VORA_BACKEND) — FastAPI + SQLModel, développé par [@Asanflo](https://github.com/Asanflo)
 - **Communication temps réel** : WebSockets (suivi de course, négociation)
 - **Authentification** : OTP par numéro de téléphone (+237)
 
+<<<<<<< HEAD
 ## Structure du projet# VORA_FRONTEND
 Voici le contenu à mettre dans ton README.md. Ouvre-le et remplace tout le contenu existant :
 Code
 Colle ceci :
+=======
+## 📁 Structure du projet
+>>>>>>> d1d1fa173da45b58736829c09153e1516bd8f6ac
 Markdown
 lib/
 ├── main.dart
@@ -68,6 +84,7 @@ lib/
 │   ├── driver_validate_arrival_screen.dart
 │   ├── safety_screen.dart
 │   └── weather_alert_screen.dart
+<<<<<<< HEAD
 Code
 Build APK (pour tester sur d'autres appareils)
 Bash
@@ -81,6 +98,8 @@ Projet développé dans un cadre académique / compétitif (Hackathon NuxCine 20
 
 
 
+=======
+>>>>>>> d1d1fa173da45b58736829c09153e1516bd8f6ac
 ##  Démarrage
 
 ### Prérequis
@@ -95,6 +114,7 @@ cd VORA_FRONTEND
 flutter pub get
 flutter run
 
+<<<<<<< HEAD
 ## Outils utilisés
 
 ### Frontend (ce dépôt)
@@ -111,3 +131,13 @@ Projet réalisé dans le cadre du Hackathon NuxCine 2026
 Frontend mobile (Flutter) : @bryana08
 Backend (FastAPI) : @Asanflo
 
+=======
+
+
+
+### Équipe
+
+Projet réalisé dans le cadre du Hackathon NuxCine 2026.
+Frontend mobile (Flutter) : @bryana08
+Backend (FastAPI) : @Asanflo
+>>>>>>> d1d1fa173da45b58736829c09153e1516bd8f6ac
